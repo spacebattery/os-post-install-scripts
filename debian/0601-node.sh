@@ -1,18 +1,9 @@
 #!/bin/sh
 
 install() {
-  # https://docs.docker.com/engine/installation/linux/ubuntu/
-  sudo apt-get install -y apt-transport-https \
-    software-properties-common \
-    ca-certificates \
-    curl
-  curl -fsSL https://yum.dockerproject.org/gpg | sudo apt-key add -
-  sudo apt-get install software-properties-common
-  sudo add-apt-repository \
-    "deb https://apt.dockerproject.org/repo/ \
-    ubuntu-$(lsb_release -cs) \
-    main"
-  sudo apt-get update
+  # https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions
+  curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+  sudo apt-get install -y nodejs
 }
 
 update() {
